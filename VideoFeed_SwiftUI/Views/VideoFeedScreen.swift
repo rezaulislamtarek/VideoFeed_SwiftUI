@@ -23,22 +23,16 @@ struct VideoFeedScreen: View {
     }
     
     var body: some View {
-        VStack(alignment:.leading) {
-            Text("Video Feed")
-                .bold()
-                .padding()
+        
             ScrollView(showsIndicators: false){
                 LazyVStack(spacing:8 ){
-                    ForEach(vm.videos){ video in
-                        FeedItemView(video: video)
-                            .padding(.bottom)
-                             
+                    ForEach(Array(vm.videos.enumerated()), id: \.element.id) { index, video in
+                       // FeedItemView(video: video)
+                        //    .id(index)
                     }
                 }
             }
-        }
-        .background(.gray.opacity(0.1))
-         
+            .edgesIgnoringSafeArea(.all)
     }
 }
 

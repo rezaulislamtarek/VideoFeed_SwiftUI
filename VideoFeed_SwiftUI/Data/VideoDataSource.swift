@@ -40,8 +40,10 @@ class VideDataSourceImpl : VideoDataSource{
     
     func initVideos(){
         videos = [
+            VideoModel(videoTitle: "Flower", url: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4", tag: ["Animation","Child"]),
+            VideoModel(videoTitle: "trailer", url: "https://media.w3.org/2010/05/sintel/trailer.mp4", tag: ["Animation","Child"]),
             VideoModel(videoTitle: "For Bigger Blazes", url: "https://embed-ssl.wistia.com/deliveries/cc8402e8c16cc8f36d3f63bd29eb82f99f4b5f88/accudvh5jy.mp4", tag: ["Animation","Child","For Bigger Blazes"]),
-            VideoModel(videoTitle: "Big Buck Bunny", url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", tag: ["Animation","Child"]),
+           
             VideoModel(videoTitle: "Elephants Dream", url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4", tag: ["Animation","Child","Elephants Dream"]),
             VideoModel(videoTitle: "Big Buck Bunny", url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", tag: ["Animation","Child"]),
             VideoModel(videoTitle: "Elephants Dream", url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4", tag: ["Animation","Child","Elephants Dream"]),

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1A9E092C103FAA00F153A1 /* VideoPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1A9E082C103FAA00F153A1 /* VideoPlayer */; };
+		0B2A071D2C0EF165008A559C /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A071C2C0EF165008A559C /* VideoPlayerModel.swift */; };
+		0B2A071F2C0F1AA3008A559C /* ReelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A071E2C0F1AA3008A559C /* ReelsView.swift */; };
+		0B2A07212C0F343D008A559C /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A07202C0F343D008A559C /* CustomVideoPlayer.swift */; };
 		0BED06612C06FEFA00373565 /* VideoFeed_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BED06602C06FEFA00373565 /* VideoFeed_SwiftUIApp.swift */; };
 		0BED06632C06FEFA00373565 /* VideoFeedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BED06622C06FEFA00373565 /* VideoFeedScreen.swift */; };
 		0BED06652C06FEFB00373565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BED06642C06FEFB00373565 /* Assets.xcassets */; };
@@ -23,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B2A071C2C0EF165008A559C /* VideoPlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerModel.swift; sourceTree = "<group>"; };
+		0B2A071E2C0F1AA3008A559C /* ReelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsView.swift; sourceTree = "<group>"; };
+		0B2A07202C0F343D008A559C /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
 		0BED065D2C06FEFA00373565 /* VideoFeed_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoFeed_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BED06602C06FEFA00373565 /* VideoFeed_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeed_SwiftUIApp.swift; sourceTree = "<group>"; };
 		0BED06622C06FEFA00373565 /* VideoFeedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedScreen.swift; sourceTree = "<group>"; };
@@ -44,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1A9E092C103FAA00F153A1 /* VideoPlayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				0BED06752C07005F00373565 /* VideoModel.swift */,
+				0B2A071C2C0EF165008A559C /* VideoPlayerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +140,7 @@
 			children = (
 				0BED06852C07294B00373565 /* Components */,
 				0BED06622C06FEFA00373565 /* VideoFeedScreen.swift */,
+				0B2A071E2C0F1AA3008A559C /* ReelsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				0BED06862C07297900373565 /* FeedItemView.swift */,
+				0B2A07202C0F343D008A559C /* CustomVideoPlayer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -174,6 +185,9 @@
 			dependencies = (
 			);
 			name = VideoFeed_SwiftUI;
+			packageProductDependencies = (
+				0B1A9E082C103FAA00F153A1 /* VideoPlayer */,
+			);
 			productName = VideoFeed_SwiftUI;
 			productReference = 0BED065D2C06FEFA00373565 /* VideoFeed_SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -202,6 +216,9 @@
 				Base,
 			);
 			mainGroup = 0BED06542C06FEFA00373565;
+			packageReferences = (
+				0B1A9E072C103FAA00F153A1 /* XCRemoteSwiftPackageReference "VideoPlayer" */,
+			);
 			productRefGroup = 0BED065E2C06FEFA00373565 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,9 +247,12 @@
 			files = (
 				0BED067E2C0705B000373565 /* RemoveVideoUseCase.swift in Sources */,
 				0BED06782C07020200373565 /* FetchVideoUseCase.swift in Sources */,
+				0B2A071D2C0EF165008A559C /* VideoPlayerModel.swift in Sources */,
 				0BED06632C06FEFA00373565 /* VideoFeedScreen.swift in Sources */,
 				0BED067C2C07054E00373565 /* UploadVideoUseCase.swift in Sources */,
+				0B2A071F2C0F1AA3008A559C /* ReelsView.swift in Sources */,
 				0BED067A2C07044200373565 /* VideoRepository.swift in Sources */,
+				0B2A07212C0F343D008A559C /* CustomVideoPlayer.swift in Sources */,
 				0BED06872C07297900373565 /* FeedItemView.swift in Sources */,
 				0BED06802C0705FF00373565 /* VideoRepositoryImpl.swift in Sources */,
 				0BED06762C07005F00373565 /* VideoModel.swift in Sources */,
@@ -380,6 +400,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,6 +430,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,6 +466,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B1A9E072C103FAA00F153A1 /* XCRemoteSwiftPackageReference "VideoPlayer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wxxsw/VideoPlayer.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B1A9E082C103FAA00F153A1 /* VideoPlayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B1A9E072C103FAA00F153A1 /* XCRemoteSwiftPackageReference "VideoPlayer" */;
+			productName = VideoPlayer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0BED06552C06FEFA00373565 /* Project object */;
 }

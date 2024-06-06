@@ -8,48 +8,57 @@
 import SwiftUI
 import AVKit
 
-struct FeedItemView: View {
-    var video : VideoModel
-    
-    @State private var player : AVPlayer
-    
-    init(video : VideoModel){
-        self.video = video
-        player =  AVPlayer(url: URL(string: self.video.url)!)
-    }
-    
-    var body: some View {
-        VStack(alignment:.leading, spacing: 4){
-            VideoPlayer(player: player)
-                .frame(height: 220)
-            
-            
-            Text(video.videoTitle)
-                .padding(.horizontal)
-            HStack{
-                ForEach(video.tag, id: \.self){ tag in
-                    Text(tag)
-                        .font(.footnote)
-                        .padding(.horizontal)
-                        .padding(.vertical,4)
-                        .background(.green.opacity(0.1))
-                        .cornerRadius(16)
-                }
-            }.padding(.horizontal)
-        }
-        .onAppear{
-            player.play()
-            //player.isMuted = true
-            do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: [])
-            }
-            catch {
-                print("Setting category to AVAudioSessionCategoryPlayback failed.")
-            }
-        }
-    }
-}
 
-#Preview {
-    FeedItemView(video: VideoModel(videoTitle: "Video", url: "https://embed-ssl.wistia.com/deliveries/cc8402e8c16cc8f36d3f63bd29eb82f99f4b5f88/accudvh5jy.mp4", tag: ["Test Tag One","Tag 2", "Tag Three"]))
-}
+//
+//struct FeedItemView: View {
+//    var video : VideoPlayerModel
+//    
+//    var vm : VideoViewModel
+//    
+//    init(){
+//         
+//        let videoDataSource : VideoDataSource = VideDataSourceImpl()
+//        let videoRepo = VideoRepositoryImpl(videoDataSource: videoDataSource)
+//        let fetchVideoUseCase = FetchVideoUseCase(videoRepo: videoRepo)
+//        let uploadVideoUseCase = UploadVideoUseCase(videoRepo: videoRepo)
+//        let removeVideoUseCase = RemoveVideoUseCase(videoRepo: videoRepo)
+//        
+//        vm = VideoViewModel(fetchVideoUseCase: fetchVideoUseCase, uploadVideoUseCase: uploadVideoUseCase, removeVideoUseCase: removeVideoUseCase)
+//    }
+//     
+//    
+//    var body: some View {
+//        VStack(alignment:.leading, spacing: 4){
+//            VideoPlayer(player: video.player)
+//                .scaledToFill()
+//                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//                .overlay(alignment: .bottom) {
+//                    VStack{
+//                        Text("Title")
+//                            .foregroundColor(.white)
+//                            .font(.title)
+//                            .padding(.horizontal)
+// 
+//                    }
+//                }
+//        }
+//        .onAppear{
+//            print("Video onAppear \(video.id)")
+//            
+//            do {
+//                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: [])
+//            }
+//            catch {
+//                
+//            }
+//        }
+//        .onDisappear{
+//            print("Video disAppear")
+//            
+//        }
+//    }
+//}
+//
+////#Preview {
+////    FeedItemView(video: VideoPlayerModel(id: "as", player: AVPlayer(url: URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4")!)))
+////}

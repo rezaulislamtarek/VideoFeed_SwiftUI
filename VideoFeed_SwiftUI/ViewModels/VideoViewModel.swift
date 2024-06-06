@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import AVFoundation
+
 final class VideoViewModel  {
-    var videos : [VideoModel]  = []
+    var videos : [VideoPlayerModel]  = []
     private var fetchVideoUseCase : FetchVideoUseCase
     private var uploadVideoUseCase : UploadVideoUseCase
     private var removeVideoUseCase : RemoveVideoUseCase
@@ -21,7 +23,11 @@ final class VideoViewModel  {
     }
     
     private func fetchVideos(){
-        videos = fetchVideoUseCase.execute()
+       videos = fetchVideoUseCase.execute().map { toVideoPlayerModel(videoModel: $0) }
+    }
+    
+    private func toVideoPlayerModel(videoModel : VideoModel) -> VideoPlayerModel{
+        return VideoPlayerModel(player: AVPlayer(url: URL(string: videoModel.url)!))
     }
     
 }
